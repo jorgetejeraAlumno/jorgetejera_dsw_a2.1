@@ -8,6 +8,7 @@
 </head>
 <body>
     <form action='{{route('saveForm')}}' method="post">
+        @csrf
         <label for="email">
             Email:
             <input type="text" id="email">
@@ -30,8 +31,8 @@
             Descripcion:
             <input type="text" id="desc">
         </label><br><br>
-
+        <button type="submit">Enviar duda</button>
     </form>
-    <button type="submit">Enviar duda</button>
+    
 </body>
 </html>
