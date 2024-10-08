@@ -16,14 +16,21 @@ form{
     border: 1px solid black;
     padding: 5px;
 }
+button{
+    transition: 0.25s;
+    background-color: none;
+    color: var(--color);
+}
 form button{
     width: 100%;
     height: 30px;
-    background-color: rgb(0, 98, 143);
+    --color:rgb(0, 0, 0);
+    --hover: rgb(0, 98, 143);
     color:white;
     border: none;
     padding: 0;
     margin: 0%;
+
 }
 
 form input,select{
@@ -37,4 +44,5 @@ form input,select{
     color: rgb(255, 255, 255);
     width: 100%;
     height: 50px;
+    border: none;
 }
