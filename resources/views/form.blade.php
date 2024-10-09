@@ -14,7 +14,7 @@
         <form action='{{route('saveForm')}}' method="post">
         @csrf
         <label for="email">
-            Email:
+             Email:
             <input type="text" name="email">
         </label><br><br>
         <label for="modulo">
