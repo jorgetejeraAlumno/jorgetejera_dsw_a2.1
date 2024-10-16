@@ -23,7 +23,7 @@ class doubtController extends Controller
             $modulo=$request ->input("modulo");
             $asunto=$request ->input("asunto");
             $desc=$request ->input("desc");
-            $duda=[$mail,$modulo,$asunto,$desc];
+            /*$duda=[$mail,$modulo,$asunto,$desc];
             $ruta=storage_path('app/public/dudas.csv');
             $file = fopen($ruta,"a+");
             for($i= 0;$i<count($duda);$i++){
@@ -31,7 +31,7 @@ class doubtController extends Controller
                 fwrite( $file,";");
             }
             fwrite($file,"\n");
-            fclose($file);
+            fclose($file);*/
             
             return redirect()->route('show.request')->with('success', 'Su duda ha sido enviada correctamente.');
         }
