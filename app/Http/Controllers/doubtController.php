@@ -19,7 +19,7 @@ class doubtController extends Controller
                 'desc' => 'required|max:300',
             ]);
 
-            $mail=$request ->input("email");
+            $mail=$request ->input("email"); 
             $modulo=$request ->input("modulo");
             $asunto=$request ->input("asunto");
             $desc=$request ->input("desc");
@@ -32,6 +32,7 @@ class doubtController extends Controller
             }
             fwrite($file,"\n");
             fclose($file);
+            
             return redirect()->route('show.request')->with('success', 'Su duda ha sido enviada correctamente.');
         }
 }
