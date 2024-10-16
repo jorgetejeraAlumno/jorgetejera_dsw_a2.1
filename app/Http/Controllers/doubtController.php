@@ -11,14 +11,6 @@ class doubtController extends Controller
             return view("form");
         }
         public function save_form(Request $request){
-
-            $validatedData= $request->validate([
-                'email' => 'required|email',
-                'modulo' => 'required',
-                'asunto' => 'required|not_regex:/^[0-9]+$/|max:50',
-                'desc' => 'required|max:300',
-            ]);
-
             $mail=$request ->input("email");
             $modulo=$request ->input("modulo");
             $asunto=$request ->input("asunto");
