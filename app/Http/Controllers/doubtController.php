@@ -39,7 +39,21 @@ class doubtController extends Controller
                 "desc"=>$desc
 
             ]);
+             return view('request');
             
-            return redirect()->route('show.request')->with('success', 'Su duda ha sido enviada correctamente.');
+        }
+
+        public function show_db(){
+            $doubts = Doubt::all();
+            $doubts_group=[];
+            foreach($doubts as $doubt){
+                $doubts_group[] = [
+                    'email'=>$doubt -> email,
+                    'modulo'=>$doubt -> modulo,
+                    'asunto'=>$doubt -> asunto,
+                    'desc' => $doubt -> desc
+                ];
+            }
+            return view('list_doubts',['dudas' => $doubts_group]);
         }
 }

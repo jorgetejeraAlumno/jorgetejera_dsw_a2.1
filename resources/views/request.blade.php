@@ -10,6 +10,8 @@
     <header><h1>Duda registrada con exito</h1></header>
     <main>
         <a href={{route('show.form')}}><button id="btn_return">Registrar nueva duda</button></a>
+        <br>
+        <a href={{route('list')}}><button id="btn_list">Ver Listado</button></a>
     </main>
 </body>
 </html>

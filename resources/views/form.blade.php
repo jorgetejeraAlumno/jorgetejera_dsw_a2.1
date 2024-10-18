@@ -51,7 +51,7 @@
                 
             @endif
         </label><br><br>
-        <button type="submit">Enviar duda</button>
+        <button type='submit'>Enviar duda</button>
     </form>
     
     </main>

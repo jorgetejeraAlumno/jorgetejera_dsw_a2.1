@@ -12,3 +12,4 @@ Route::post('/save_form', [doubtController::class,'save_form'] ) ->name('saveFor
 Route::get('/request', function(){
   return view('request');
 } ) ->name('show.request');
+Route::get('list_doubts',[doubtController::class,'show_db'])->name('list');
