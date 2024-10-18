@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doubt;
 use Illuminate\Http\Request;
-
 class doubtController extends Controller
 {
     //
@@ -32,6 +32,13 @@ class doubtController extends Controller
             }
             fwrite($file,"\n");
             fclose($file);*/
+            $Doubt = Doubt::create([
+                "email"=>$mail,
+                "modulo"=>$modulo,
+                "asunto"=>$asunto,
+                "desc"=>$desc
+
+            ]);
             
             return redirect()->route('show.request')->with('success', 'Su duda ha sido enviada correctamente.');
         }
