@@ -52,8 +52,9 @@
             @endif
         </label><br><br>
         <button type='submit'>Enviar duda</button>
+        
     </form>
-    
+    <a href={{route('list')}}><button id="btn_list">Ver Listado</button></a>
     </main>
 
     
