@@ -48,6 +48,7 @@ class doubtController extends Controller
             $doubts_group=[];
             foreach($doubts as $doubt){
                 $doubts_group[] = [
+                    'id'=>$doubt -> id,
                     'email'=>$doubt -> email,
                     'modulo'=>$doubt -> modulo,
                     'asunto'=>$doubt -> asunto,
@@ -55,5 +56,10 @@ class doubtController extends Controller
                 ];
             }
             return view('list_doubts',['dudas' => $doubts_group]);
+        }
+
+        public function delete_db($id){
+            $deleted = Doubt::destroy($id);
+            return view('list_doubts');
         }
 }

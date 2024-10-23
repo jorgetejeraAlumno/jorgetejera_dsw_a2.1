@@ -51,11 +51,3 @@ form input,select{
     border: none;
     margin: 10px;
 }
-
-.tabla_duda{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}

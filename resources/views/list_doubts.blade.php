@@ -22,6 +22,14 @@
                 <td>{{$doubt['modulo']}}</td>
                 <td>{{$doubt['asunto']}}</td>
                 <td>{{$doubt['desc']}}</td>
+                <td>
+                    <form action="{{route('delete_db',['id'=>$doubt['id']])}}" method="POST">
+                        @method('DELETE')
+                        <button>
+                            X
+                        </button>
+                    </form>
+                </td>
                 </tr>
                 @endforeach
             @endif
@@ -32,6 +40,6 @@
 
     </main>
     
-    
+
 </body>
 </html>
