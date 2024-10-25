@@ -23,10 +23,11 @@
                 <td>{{$doubt['asunto']}}</td>
                 <td>{{$doubt['desc']}}</td>
                 <td>
-                    <form action="{{route('delete_db',['id'=>$doubt['id']])}}" method="POST">
+                    <form action="{{route('delete_db',$doubt['id'])}}" method="POST">
+                        @csrf
                         @method('DELETE')
-                        <button>
-                            X
+                        <button type="submit">
+                            ELIMINAR
                         </button>
                     </form>
                 </td>

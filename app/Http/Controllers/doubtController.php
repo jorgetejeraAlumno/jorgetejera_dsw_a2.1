@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Doubt;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
 class doubtController extends Controller
 {
     //
@@ -60,6 +62,6 @@ class doubtController extends Controller
 
         public function delete_db($id){
             $deleted = Doubt::destroy($id);
-            return view('list_doubts');
+            return Redirect::to('list_doubts');
         }
 }
