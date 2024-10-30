@@ -21,13 +21,27 @@
                 <td>{{$doubt['email']}}</td>
                 <td>{{$doubt['modulo']}}</td>
                 <td>{{$doubt['asunto']}}</td>
-                <td>{{$doubt['desc']}}</td>
+                @if(!isset($doubt['color']))
+                <td style="color:black ">
+                    @else
+                        <td style="color:{{$doubt['color']}} ">
+                    {{$doubt['desc']}}
+                    @endif
+                </td>
+
                 <td>
                     <form action="{{route('delete_db',$doubt['id'])}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">
                             ELIMINAR
+                        </button>
+                    </form>
+                    <form action="{{route('edit_db',$doubt['id'])}}" method="get">
+                        @csrf
+                        @method('GET')
+                        <button type="submit">
+                            EDITAR
                         </button>
                     </form>
                 </td>

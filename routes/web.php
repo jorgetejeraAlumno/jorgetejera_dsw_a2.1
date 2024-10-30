@@ -14,3 +14,5 @@ Route::get('/request', function(){
 } ) ->name('show.request');
 Route::get('list_doubts',[doubtController::class,'show_db'])->name('list');
 Route::DELETE('delete_db{id}', [doubtController::class, 'delete_db'])->name('delete_db');
+route::get('edit_db{id}',[doubtController::class,'edit_db'])->name('edit_db');
+Route::put('editForm{id}',[doubtController::class, 'editForm']);
