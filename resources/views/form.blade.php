@@ -21,7 +21,7 @@
         @csrf
         <label for="email">
              Email: 
-            <input type="text" name="email" placeholder="{{$doubt['email']}}">
+            <input type="text" name="email">
             @if($errors->any())
             <span style="color: red;">{{ $errors->first('email')}}</span>
         @endif
@@ -29,11 +29,11 @@
         <label for="modulo">
             Modulo:
             <select name="modulo" id="modulo">
-                @if(!isset($doubt))
+                @if(!isset($doubt1))
                     
                 <option value="" >Elige...</option>
                 @else
-                <option value="{{$doubt['modulo']}}">{{$doubt['modulo']}}</option>
+                <option></option>
                 @endif
                 <option value="dsw">DSW</option>
                 <option value="dew">DEW</option>
@@ -47,7 +47,7 @@
         </label><br><br>
         <label for="asunto">
             Asunto:
-            <input type="text" name="asunto" placeholder="{{$doubt['asunto']}}">
+            <input type="text" name="asunto" >
             @if($errors->any())
                 @foreach ($errors->get('asunto') as $error)
                     <span style="color: red">{{$error}}</span>
@@ -56,7 +56,7 @@
         </label><br><br>
         <label for="desc">
             Descripcion:
-            <input type="text" name="desc" placeholder="{{$doubt['desc']}}">
+            <input type="text" name="desc">
             @if($errors->any())
             <span style="color: red;">{{ $errors->first('desc')}}</span>
                 
@@ -64,7 +64,7 @@
         </label><br><br>
         <label for="color">
             Color:
-            <input type="text" name='color' placeholder="{{$doubt['color']}}">
+            <input type="text" name='color'>
             @if($errors->any())
             <span style="color: red;">{{ $errors->first('color')}}</span>
             @endif

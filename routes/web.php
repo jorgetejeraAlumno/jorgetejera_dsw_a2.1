@@ -12,10 +12,7 @@ Route::post('/save_form', [doubtController::class,'save_form'] ) ->name('saveFor
 Route::get('/request', function(){
   return view('request');
 } ) ->name('show.request');
-Route::get('list_doubts',[doubtController::class,'show_db'])->name('list');
-Route::DELETE('delete_db{id}', [doubtController::class, 'delete_db'])->name('delete_db');
-route::get('edit_db{id}',[doubtController::class,'edit_db'])->name('edit_db');
-Route::put('editForm{id}',[doubtController::class, 'editForm']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -24,4 +21,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('list_doubts',[doubtController::class,'show_db'])->name('list');
+Route::DELETE('delete_db{id}', [doubtController::class, 'delete_db'])->name('delete_db');
+route::get('edit_db{id}',[doubtController::class,'edit_db'])->name('edit_db');
+Route::put('editForm{id}',[doubtController::class, 'editForm']);
 });
